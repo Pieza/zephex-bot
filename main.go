@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"./actions/init"
+	"main/events"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 )
@@ -23,8 +23,8 @@ func main() {
 	}
 
 	// register events
-	//bot.AddHandler(ready)
-	bot.AddHandler(messageCreate)
+	bot.AddHandler(events.Ready)
+	bot.AddHandler(events.MessageCreate)
 
 	err = bot.Open()
 
@@ -35,11 +35,6 @@ func main() {
 	fmt.Println("Bot is now running.  Press CTRL-C to exit.")
 
 	for {
-	}
-}
-
-func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
-	if m.Content == "ping" {
-		s.ChannelMessageSend(m.ChannelID, "pong")
+		// wait to close
 	}
 }
