@@ -20,4 +20,12 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 		s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
+	if strings.Contains(strings.ToLower(m.Content), "gordo") || strings.Contains(strings.ToLower(m.Content), "empresario") {
+		embed := &discordgo.MessageEmbed{
+		    Image: &discordgo.MessageEmbedImage {
+					URL: "https://github.com/pieza/zephex-bot/blob/master/assets/images/choche.png?raw=true",
+				},
+		}
+		s.ChannelMessageSendEmbed(m.ChannelID, embed)
+	}
 }
