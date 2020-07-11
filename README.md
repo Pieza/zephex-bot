@@ -1,4 +1,4 @@
 # zephex-bot
-Manda huevo que no me clone xD
+Manda huevo que no me invite a su server xD
 
-![manda huevo](https://github.com/pieza/zephex-bot/blob/master/assets/images/zephex.jpeg?raw=true)
+https://discord.com/api/oauth2/authorize?client_id=730130756696801351&permissions=67584&scope=bot
