@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
+	"main/db"
 	"main/events"
+	"os"
+
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 )
@@ -21,6 +23,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	db.SetUpDB()
 
 	// register events
 	bot.AddHandler(events.Ready)
